@@ -1,7 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
-import { useFormStatus } from "react-dom";
+import { useFormState, useFormStatus } from "react-dom";
 import { createTodo } from "@/app/actions";
 
 const initialState = {
@@ -19,7 +18,7 @@ function SubmitButton() {
 }
 
 export function AddForm() {
-  const [state, formAction] = useActionState(createTodo, initialState);
+  const [state, formAction] = useFormState(createTodo, initialState);
 
   return (
     <form action={formAction}>
